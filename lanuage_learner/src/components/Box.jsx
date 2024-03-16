@@ -9,14 +9,9 @@ return (
     <>
         <Canvas>
             <OrbitControls />
-            {/*
             <Box>
             <meshNormalMaterial />
             </Box>
-            */}
-            <Environment preset='sunset' />
-            <ambientLight intensity={0.8} color="pink" />
-            <Gltf src='\models\keyboard.glb' />
         </Canvas>
     </>
     );
