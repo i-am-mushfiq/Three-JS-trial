@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 export const Experience = () => {
 return (
     <>
-        <Canvas>
+        <Canvas style={{ background: 'black' }}>
             <OrbitControls />
             {/*
             <Box>
@@ -15,8 +15,9 @@ return (
             </Box>
             */}
             <Environment preset='sunset' />
-            <ambientLight intensity={0.8} color="pink" />
-            <Gltf src='\models\keyboard.glb' />
+            {/*<ambientLight intensity={0.5} color="pink" /> {/* Ambient light 
+            <directionalLight intensity={0.5} position={[0, 10, 0]} color="pink" />*/}
+            <Gltf src='/models/need_some_space.glb'/>
         </Canvas>
     </>
     );
