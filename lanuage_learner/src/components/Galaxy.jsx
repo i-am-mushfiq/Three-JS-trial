@@ -13,16 +13,16 @@ export const Galaxy = () => {
             <Environment preset='sunset' />
             <EffectComposer>
                 <DepthOfField
-                    focusDistance={0} // where to focus
-                    focalLength={2} // focal length
-                    bokehScale={5} // bokeh size
+                    focusDistance={0} 
+                    focalLength={2} 
+                    bokehScale={5}
                 />
                 <Bloom
-                    intensity={5.0} // The bloom intensity.
-                    blurPass={undefined} // A blur pass.
-                    luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
-                    luminanceSmoothing={1} // smoothness of the luminance threshold. Range is [0, 1]
-                    mipmapBlur={true} // Enables or disables mipmap blur. // The vertical resolution.
+                    intensity={5.0} 
+                    blurPass={undefined} 
+                    luminanceThreshold={0} 
+                    luminanceSmoothing={1} 
+                    mipmapBlur={true}
                 />
             </EffectComposer>
             <GalaxyRotation gltfRef={gltfRef} />
@@ -33,9 +33,9 @@ export const Galaxy = () => {
 const GalaxyRotation = ({ gltfRef }) => {
     useFrame(({ clock }) => {
         if (gltfRef.current) {
-            const elapsedTime = clock.getElapsedTime(); // Get elapsed time in seconds
-            const rotationSpeed = (2 * Math.PI * 30) / 60; // Convert rpm to radians per second (2π radians = 1 revolution)
-            gltfRef.current.rotation.y = elapsedTime * rotationSpeed; // Rotate the model
+            const elapsedTime = clock.getElapsedTime(); 
+            const rotationSpeed = (2 * Math.PI * 30) / 60; 
+            gltfRef.current.rotation.y = elapsedTime * rotationSpeed; 
         }
     });
 
