@@ -1,5 +1,11 @@
 .laptop iframe {
     width: 1024px;
     height: 580px;
-    border-radius: 40px;
+    border-radius: 10px;
+}
+
+.setup iframe {
+    width: 580px;
+    height: 1024px;
+    border-radius: 10px;
 }
