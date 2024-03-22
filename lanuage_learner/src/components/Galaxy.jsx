@@ -3,7 +3,6 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Environment, Gltf } from '@react-three/drei';
 import { Bloom, DepthOfField, EffectComposer, HueSaturation } from '@react-three/postprocessing';
 import { useRef } from 'react';
-import { OrbitControls } from 'drei';
 
 export const Galaxy = () => {
     const gltfRef = useRef();
