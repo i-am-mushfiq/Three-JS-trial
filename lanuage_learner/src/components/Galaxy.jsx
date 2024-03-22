@@ -1,15 +1,17 @@
 "use client"
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Environment, Gltf } from '@react-three/drei';
-import { Bloom, DepthOfField, EffectComposer } from '@react-three/postprocessing';
+import { OrbitControls, Environment, Gltf } from '@react-three/drei';
+import { Bloom, DepthOfField, EffectComposer, HueSaturation } from '@react-three/postprocessing';
 import { useRef } from 'react';
+import { OrbitControls } from 'drei';
 
 export const Galaxy = () => {
     const gltfRef = useRef();
 
     return (
         <Canvas style={{ background: 'black' }}>
-            <Gltf ref={gltfRef} src='/models/galaxy.glb' position={[-1.3, -1.3, 4]} animations />
+            <Gltf ref={gltfRef} src='\models\galaxy.glb' animations />
+            <OrbitControls />
             <Environment preset='sunset' />
             <EffectComposer>
                 <DepthOfField
@@ -24,6 +26,11 @@ export const Galaxy = () => {
                     luminanceSmoothing={1} 
                     mipmapBlur={true}
                 />
+                <HueSaturation // blend mode
+                    hue={0} // hue in radians
+                    saturation={45} // saturation in radians
+                />
+
             </EffectComposer>
             <GalaxyRotation gltfRef={gltfRef} />
         </Canvas>
